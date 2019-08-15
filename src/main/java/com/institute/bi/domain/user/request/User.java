@@ -6,6 +6,8 @@
 
 package com.institute.bi.domain.user.request;
 
+import java.sql.Timestamp;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 
- * @author gupbi001
+ * @author bijendra
  *
  * 
  * 
@@ -34,13 +36,19 @@ import lombok.NoArgsConstructor;
 @JsonInclude(Include.NON_EMPTY)
 public class User {
 
-	@ApiModelProperty(notes = "User Id", name = "userId", required = true, value = "Userid/email Id")
-	private String userId;
-
+	@ApiModelProperty(notes = "emailId", name = "emailId", required = true, value = "emailId")
 	private String emailId;
 
+	@ApiModelProperty(notes = "password", name = "password", required = true, value = "password")
 	private String password;
 
-	private String userName;
+	@ApiModelProperty(notes = "mobileNo", name = "mobileNo", required = true, value = "mobileNo")
+	private String mobileNo;
+
+	@ApiModelProperty(notes = "createdDate", name = "createdDate", required = true, value = "createdDate")
+	private Timestamp createdDate;
+
+	@ApiModelProperty(notes = "isActive", name = "isActive", required = true, value = "isActive")
+	private boolean isActive;
 
 }
